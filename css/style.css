@@ -512,70 +512,63 @@ nav {
 .github-activity {
     margin-top: 4rem;
     padding: 2.5rem;
-    background: rgba(255, 255, 255, 0.05);
+    background: #0D1117;
     border-radius: 20px;
-    backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.github-activity:hover {
-    transform: translateY(-5px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .github-activity h2 {
-    font-size: 2rem;
-    color: var(--primary-color);
+    font-size: 1.8rem;
+    color: #c9d1d9;
     margin-bottom: 2rem;
-    text-align: center;
-    font-weight: 600;
+    text-align: left;
+    font-weight: 400;
 }
 
 .calendar {
     max-width: 100%;
     margin: 0 auto;
-    background: rgba(255, 255, 255, 0.03);
-    padding: 1.5rem;
-    border-radius: 15px;
-    overflow: hidden;
+    padding: 1rem;
+    border-radius: 6px;
+    background: #0D1117;
 }
 
 /* Override GitHub Calendar Default Styles */
 :root {
-    --color-calendar-graph-day-bg: rgba(255, 255, 255, 0.05);
-    --color-calendar-graph-day-border: rgba(255, 255, 255, 0.05);
-    --color-calendar-graph-day-L1-bg: rgba(134, 239, 172, 0.2);
-    --color-calendar-graph-day-L2-bg: rgba(134, 239, 172, 0.4);
-    --color-calendar-graph-day-L3-bg: rgba(134, 239, 172, 0.6);
-    --color-calendar-graph-day-L4-bg: rgba(134, 239, 172, 0.8);
+    --color-calendar-graph-day-bg: #161B22;
+    --color-calendar-graph-day-border: rgba(27, 31, 35, 0.06);
+    --color-calendar-graph-day-L1-bg: #0E4429;
+    --color-calendar-graph-day-L2-bg: #006D32;
+    --color-calendar-graph-day-L3-bg: #26A641;
+    --color-calendar-graph-day-L4-bg: #39D353;
 }
 
 .calendar .contrib-number {
-    color: var(--primary-color) !important;
-    font-weight: 600 !important;
-    font-size: 1.2rem !important;
+    color: #c9d1d9 !important;
+    font-weight: 400 !important;
+    font-size: 1.1rem !important;
 }
 
 .calendar .contrib-column {
-    color: var(--text-color) !important;
-    font-size: 0.9rem !important;
+    color: #7d8590 !important;
+    font-size: 0.8rem !important;
 }
 
 .calendar .text-muted {
-    color: rgba(255, 255, 255, 0.6) !important;
+    color: #7d8590 !important;
 }
 
 .calendar .contrib-footer {
     padding: 1rem 0;
-    font-size: 0.9rem;
-    color: var(--text-color) !important;
+    font-size: 0.8rem;
+    color: #7d8590 !important;
 }
 
 .calendar .contrib-legend {
     display: flex;
-    justify-content: center;
-    gap: 0.5rem;
+    justify-content: flex-end;
+    gap: 0.4rem;
     margin-top: 1rem;
 }
 
@@ -584,18 +577,7 @@ nav {
     align-items: center;
     gap: 0.25rem;
     font-size: 0.8rem;
-    color: var(--text-color);
-}
-
-/* Contribution squares hover effect */
-.calendar .js-calendar-graph-svg rect.ContributionCalendar-day {
-    transition: all 0.2s ease;
-}
-
-.calendar .js-calendar-graph-svg rect.ContributionCalendar-day:hover {
-    stroke: var(--primary-color);
-    stroke-width: 2px;
-    filter: brightness(1.2);
+    color: #7d8590;
 }
 
 @media (max-width: 768px) {
@@ -609,8 +591,7 @@ nav {
         width: 100%;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
-        padding: 1rem;
-        background: transparent;
+        padding: 0.5rem;
     }
 
     .calendar-graph {
@@ -624,19 +605,19 @@ nav {
     }
 
     .calendar::-webkit-scrollbar-track {
-        background: rgba(255, 255, 255, 0.1);
+        background: #161B22;
         border-radius: 3px;
     }
 
     .calendar::-webkit-scrollbar-thumb {
-        background: var(--primary-color);
+        background: #30363d;
         border-radius: 3px;
     }
 }
 
 @media (max-width: 480px) {
     .github-activity h2 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 
     .calendar-graph {
