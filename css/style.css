@@ -511,25 +511,34 @@ nav {
 /* GitHub Activity Section */
 .github-activity {
     margin-top: 4rem;
-    padding: 2rem;
+    padding: 2.5rem;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 20px;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.github-activity:hover {
+    transform: translateY(-5px);
 }
 
 .github-activity h2 {
-    font-size: 1.8rem;
-    color: var(--text-color);
+    font-size: 2rem;
+    color: var(--primary-color);
     margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 600;
 }
 
 .calendar {
     max-width: 100%;
     margin: 0 auto;
     background: rgba(255, 255, 255, 0.03);
-    padding: 1rem;
-    border-radius: 10px;
+    padding: 1.5rem;
+    border-radius: 15px;
+    overflow: hidden;
 }
 
 /* Override GitHub Calendar Default Styles */
@@ -543,94 +552,95 @@ nav {
 }
 
 .calendar .contrib-number {
-    color: var(--text-color) !important;
+    color: var(--primary-color) !important;
+    font-weight: 600 !important;
+    font-size: 1.2rem !important;
 }
 
 .calendar .contrib-column {
     color: var(--text-color) !important;
+    font-size: 0.9rem !important;
 }
 
 .calendar .text-muted {
     color: rgba(255, 255, 255, 0.6) !important;
 }
 
+.calendar .contrib-footer {
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    color: var(--text-color) !important;
+}
+
+.calendar .contrib-legend {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.calendar .contrib-legend .legend {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.8rem;
+    color: var(--text-color);
+}
+
+/* Contribution squares hover effect */
+.calendar .js-calendar-graph-svg rect.ContributionCalendar-day {
+    transition: all 0.2s ease;
+}
+
+.calendar .js-calendar-graph-svg rect.ContributionCalendar-day:hover {
+    stroke: var(--primary-color);
+    stroke-width: 2px;
+    filter: brightness(1.2);
+}
+
 @media (max-width: 768px) {
     .github-activity {
         margin: 2rem auto;
-        padding: 1rem;
-        width: 90%;
-        max-width: 350px;
-        overflow: hidden;
+        padding: 1.5rem;
+        width: 95%;
     }
     
     .calendar {
         width: 100%;
-        overflow-x: scroll;
+        overflow-x: auto;
         -webkit-overflow-scrolling: touch;
-        padding: 0.5rem;
+        padding: 1rem;
         background: transparent;
     }
 
     .calendar-graph {
-        min-width: 750px; /* Ensure minimum width for readability */
-        transform: scale(0.9);
+        min-width: 750px;
+        transform: scale(0.95);
         transform-origin: left top;
     }
 
-    /* Improve touch scrolling */
     .calendar::-webkit-scrollbar {
-        height: 4px;
+        height: 6px;
     }
 
     .calendar::-webkit-scrollbar-track {
         background: rgba(255, 255, 255, 0.1);
-        border-radius: 2px;
+        border-radius: 3px;
     }
 
     .calendar::-webkit-scrollbar-thumb {
         background: var(--primary-color);
-        border-radius: 2px;
-    }
-
-    /* Fix container widths */
-    .projects-content,
-    .experience-content,
-    .contact-content {
-        padding: 0;
-        width: 100%;
-    }
-
-    .project-card img {
-        height: 200px;
-        object-fit: cover;
-        width: 100%;
-    }
-
-    /* More Projects Link Mobile Fix */
-    .more-projects {
-        margin: 2rem 1rem;
-        width: auto;
-    }
-
-    .more-projects-link {
-        width: 100%;
-        justify-content: center;
+        border-radius: 3px;
     }
 }
 
 @media (max-width: 480px) {
-    .project-card {
-        width: 85%;
-        margin: 0 auto;
-    }
-
-    .github-activity {
-        width: 85%;
-        margin: 2rem auto;
+    .github-activity h2 {
+        font-size: 1.5rem;
     }
 
     .calendar-graph {
-        transform: scale(0.8);
+        transform: scale(0.85);
     }
 }
 
