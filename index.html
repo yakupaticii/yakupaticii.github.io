@@ -249,7 +249,23 @@
 
         <!-- Initialize GitHub Calendar -->
         <script>
-            GitHubCalendar(".calendar", "yakupatici", { responsive: true });
+            GitHubCalendar(".calendar", "yakupatici", {
+                responsive: true,
+                tooltips: true,
+                global_stats: true,
+                cache: 24 * 60 * 60 * 1000, // 24 hours cache
+                summary_text: '{{count}} contributions in the last year',
+                proxy: function(url) {
+                    return 'https://cors-anywhere.herokuapp.com/' + url;
+                }
+            }).then(function(response) {
+                // Success
+                console.log('Calendar loaded successfully');
+            }).catch(function(error) {
+                // Error handling
+                console.error('Error loading calendar:', error);
+                document.querySelector('.calendar').innerHTML = 'Failed to load GitHub contributions. Please check your connection and try again.';
+            });
         </script>
 
         <script src="js/script.js"></script>
